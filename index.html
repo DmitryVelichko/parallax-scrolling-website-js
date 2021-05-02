@@ -25,7 +25,7 @@
         <a href="#" id='btn'>Explore</a>
         <img src="images/mountains_front.png" alt="mountains" id="mountains_front">
     </section>
-    <div class="sec">
+    <div class="sec" id='sec'>
         <h2>Isn't that cool, huh?</h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati nobis nesciunt nisi porro consequuntur iusto molestiae enim sapiente id quia deleniti facilis doloremque neque autem, alias quidem quo beatae velit.
             <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non tenetur esse voluptatibus minus, consequatur sed officia provident quisquam fuga, possimus, laudantium ipsa asperiores qui eius libero reiciendis ea suscipit accusamus!
@@ -33,8 +33,31 @@
             <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur unde quia reprehenderit exercitationem velit, ea debitis quae? Sequi eius possimus perspiciatis quod harum! Ea voluptatibus modi vero repudiandae facilis minima.
             <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad debitis provident veniam architecto assumenda,
             porro amet consequuntur! In, ipsum inventore nam incidunt iste neque? Eaque assumenda est autem officiis iste.
-
         </p>
     </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+        
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+
+
+
+    </script>
 </body>
 </html>
